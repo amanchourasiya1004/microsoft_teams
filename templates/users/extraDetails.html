@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content="Video Conferencing Website"/>
+    <title>Data | Microsoft Teams</title>
+    <link rel="stylesheet" href="/static/css/universal.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/authentication.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/error.css" type="text/css">
+    <link href="/static/media/favicon.png" type="image/png" rel="icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main-form">
+        <div class="error-msg">{{error}}</div>
+        <div class="teams-text">Microsoft Account</div>
+        <div class="card-holder" style="width:420px;height:540px">
+            <div class="logo-forms"><img src="/static/media/mslogo.png" alt=""/></div>
+            <div class="email-password-div"></div>
+            <div class="text-signup">What's your name?</div>
+            <div class="text-exp">We need just a little more info to set up your account.</div>
+            <form action="{% url 'extradetails' %}" method="POST" id="extradetails">
+                {% csrf_token %}
+                <div class="input-div">
+                    <input type="text" autoComplete="on" class="form-input" placeholder="First name" name="first_name" id="firstname" onkeyup="keyUpHandler(this)" onclick="clickHandler(this)" onblur="onBlurHandler(this)"/>
+                </div>
+                <div class="error-input" id='error-firstname'>First name cannot be empty.</div>
+                <div class="input-div">
+                    <input type="text" autoComplete="on" class="form-input" placeholder="Last name" name="last_name" id="lastname" onkeyup="keyUpHandler(this)" onclick="clickHandler(this)" onblur="onBlurHandler(this)"/>
+                </div>
+                <div class="error-input" id='error-lastname'>Last name cannot be empty.</div>
+                <div class="birthdate-track">
+                    <label>Birthdate</label>
+                    <input name="dob" type="date" min="1920-01-01" max="2020-01-01" id='date' onchange="keyUpHandler(this)"/>
+                </div>
+                <div class="error-input" id='error-date'>Please fill out this field.</div>
+                <div class="btn-holder-form">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src='/static/js/detailsHandling.js'></script>
+</body>
+</html>

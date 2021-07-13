@@ -1,0 +1,347 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<meta charset="utf-8">
+		<title>Chat | Micorosoft Teams</title>
+		<meta name="description" content="#">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<!-- Swipe core CSS -->
+		<link href="/static/css/fontface.css" type="text/css" rel="stylesheet">
+		<link href="/static/css/swipe.min.css" type="text/css" rel="stylesheet">
+		<link href="/static/css/modalStyling.css" type="text/css" rel="stylesheet">
+		<link href="/static/css/videocall.css" type="text/css" rel="stylesheet">
+		<link href="/static/css/tabStyling.css" type="text/css" rel="stylesheet">
+		<link href="/static/css/userInfo.css" type="text/css" rel="stylesheet">
+		<!-- Favicon -->
+		<link href="/static/media/favicon.png" type="image/png" rel="icon">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="call" id="call1">
+		<div class="videos-container">
+			<div class="main-video-container">
+				<div class="main-video-tile">
+					<div class="user text-center"></div>
+					<div class="tileScreen">
+						<video autoplay playsinline></video>
+					</div>
+				</div>
+			</div>
+			<div class="side-content">
+				<div class="tiles-container">
+					<div class="tiles" onclick="tilesClickHandler(this)">
+						<div class="wrapper-tiles">
+							<div class="user text-center"></div>
+							<div class="tileScreen">
+								<video autoplay playsinline></video>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="buttons-container">
+			<button id="mic-callScreen" data-toggle="tooltip" data-placement="top" title="Mic Off"><i class="material-icons md-30">mic</i></button>
+			<button id="videocam-callScreen" data-toggle="tooltip" data-placement="top" title="Video Off"><i class="material-icons md-30">videocam</i></button>
+			<button id="present-callScreen" onclick="bottomButtonsListener(this,'Stop Presenting','Present Screen')" data-toggle="tooltip" data-placement="top" title="Present Screen"><i class="material-icons md-30">present_to_all</i></button>
+			<button id="cut-call-callScreen" data-toggle="tooltip" data-placement="top" title="Leave Call" onclick="hangup()"><i class="material-icons md-30">call_end</i></button>
+			<div class="extra-options" style="position: absolute; right: 10px; display: flex;">
+        		<button id="in-call-chats" onclick="bottomButtonsListener(this,'Hide Chats','Show Chats')" data-toggle="tooltip" data-placement="top" title="Show Chats" data-original-title="Show Chats"><i class="material-icons md-30">chat</i></button>
+    		</div>
+		</div>
+	</div>
+    <div class="hidden-window">
+        <div class="hidden-tab">
+            <div class="chats-heading">
+                <div style="margin-top:3px"><i class="material-icons md-30">forum</i></div>
+                <div class="chats-heading-text"><span>In-call chats</span></div>
+            </div>
+			<div class="hold-incallmsgs">
+			</div>
+			<div class="incallsendmsg">
+				<input id="incallinputbox" onkeyup="inCallHandlerIcon(this)" type="text" placeholder="Send a message..."/>
+				<button class="btn incallsend send" onclick="sendincallMsgHandler(this,1)"><i class="material-icons">send</i></button>
+			</div>
+        </div>
+    </div>
+	<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content modal-content-info">
+				<div class="chats-heading">
+					<div style="margin-top:3px" class="user-info-icon"><i class="material-icons md-36">info</i></div>
+					<div class="user-info-name">Aman Chourasiya</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Name</div>
+						<div class="user-info" id="infoName">Aman Chourasiya</div>
+					</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Username</div>
+						<div class="user-info" id="infoUsername">amanchourasiya</div>
+					</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Date of Birth</div>
+						<div class="user-info" id="dobUser">13-07-2000</div>
+					</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Date Joined</div>
+						<div class="user-info" id="dateJoined">20-05-1991</div>
+					</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Last Login</div>
+						<div class="user-info" id="lastLogin">Now</div>
+					</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">First Contacted</div>
+						<div class="user-info" id="firstContact">12-04-1221</div>
+					</div>
+				</div>
+				<div class="user-info-action">
+					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#infoModal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="groupInfoModal" tabindex="-1" aria-labelledby="groupInfoModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content modal-content-info">
+				<div class="chats-heading">
+					<div style="margin-top:3px" class="user-info-icon"><i class="material-icons md-36">info</i></div>
+					<div class="user-info-name">Aman Chourasiya</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Name</div>
+						<div class="user-info" id="groupInfoName">Aman Chourasiya</div>
+					</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Description</div>
+						<div class="user-info" id="groupDesc"></div>
+					</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Group Admin</div>
+						<div class="user-info" id="groupadmin"></div>
+					</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Group Created</div>
+						<div class="user-info" id="groupCreated">13-07-2000</div>
+					</div>
+				</div>
+				<div class="user-info-container">
+					<div class="border-info-div">
+						<div class="user-info-tag">Group Participants</div>
+						<div class="user-info" id="grouppart">
+						</div>
+					</div>
+				</div>
+				<div class="user-info-action">
+					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#groupInfoModal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" style="width:380px;">
+			<div class="modal-content">
+				<div class="caller-info">
+					<div class="user text-center">A</div>
+					<div class="caller-name">
+					</div>
+				</div>
+				<div class="call-type">
+					<button class="btn utility-icon"><i class="material-icons md-30">videocam</i></button>
+					<div class="call-name">Incoming Video call</div>
+				</div>
+				<div class="call-footer">
+					<button class="btn cut-call" onclick="cutIncomingCall(this)" data-toggle="modal" data-target="#exampleModal"><i class="material-icons md-30">close</i></button>
+					<button class="btn accept-call" onclick="acceptCall(this)" data-call="" data-toggle="modal" data-target="#exampleModal"><i class="material-icons md-30">phone_in_talk</i></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="userhandler">
+		<nav class="nav bgcustom sticky-top">
+			<svg fill="#fff" width="27" height="27" viewBox="0 0 24 24" style="margin-right:40px;"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+			<div class="title-app">Microsoft Teams</div>
+			<div class='search-container justify-content-center'>
+				<div class="iconwrap">
+					<svg class="fa-search align-self-center" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="#000">
+						<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+						<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+					</svg>
+					<input name="username" list="list-users" type="text" placeholder="Search by username.." class="align-self-center search-res" id="search" autoComplete="off" onfocus="clickhandler(this)" onblur="searchblurhandler(this)">
+					<datalist id="list-users">
+					</datalist>
+				</div>
+				<button type="submit" class="start-conversation" onclick="requestHandler(this)">Start Conversation</button>
+			</div>
+			<div class="dropdown utility dropleft" id="navBarUserIcon">
+				<button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="120,0"><div class="user text-center">A</div></button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item black-text" href="/group/create/">Create Group</a>
+					<a class="dropdown-item black-text" href="/logout/">Logout</a>
+				</div>
+			</div>
+		</nav>
+		<div class="no-chats">
+			<div class="begin-title">Welcome to <span>Microsoft Teams</span></div>
+			<div class="guide-note">Begin by searching a user or start a meeting.</div>
+		</div>
+		<main id="userexists">
+			<div class="layout">
+				<!-- Start of Navigation -->
+				<!-- End of Navigation -->
+				<!-- Start of Sidebar -->
+				<div class="sidebar" id="sidebar">
+					<div class="container">
+						<div class="col-md-12">
+							<div class="tab-content">
+								<div id="discussions" class="tab-pane fade active show">
+									<div class="list-group sort">
+										<button class="btn filterDiscussionsBtn active show" data-toggle="list" data-filter="all" style="font-size:20px;">All Chats</button>
+									</div>						
+									<div class="discussions">
+										<div class="list-group" id="chats" role="tablist">									
+										</div>
+									</div>
+								</div>
+								<!-- End of Settings -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End of Create Chat -->
+				<div class="main">
+					<div class="tab-content" id="nav-tabContent">
+						
+					</div>
+				</div>
+			</div> <!-- Layout -->
+		</main>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+	<script>
+		var ws_scheme = window.location.protocol == "https:" ? "wss://" : "ws://";
+		const pc_config={
+							'iceServers': [
+      								{'urls': "stun:stun.l.google.com:19302"},
+        							{'urls': "stun:stun1.l.google.com:19302"},
+									{'urls': "stun:stun2.l.google.com:19302"},
+        							{'urls': "stun:stun3.l.google.com:19302"},
+        							{'urls': "stun:stun4.l.google.com:19302"},
+									{'urls': "stun:stun.ekiga.net"}
+							]
+						};
+		const backIcon="{{background|escapejs}}";
+		const fontIcon="{{font|escapejs}}";
+		const length=JSON.parse("{{length|escapejs}}");
+		const isupdated=JSON.parse("{{updated|escapejs}}");
+		const dob="{{dob|escapejs}}";
+		const last_login="{{last_login|escapejs}}";
+		const date_joined="{{date_joined|escapejs}}";
+		if(isupdated===0){
+			window.location.pathname="/auth/extradetails";
+		}
+		if(length===0){
+			$("#userexists").css("display","none");
+		}
+		else{
+			$(".no-chats").css("display","none");
+		}
+		const username="{{username|escapejs}}";
+		const users=JSON.parse("{{users|escapejs}}");
+		const chats=JSON.parse("{{chats|escapejs}}");
+		const allmsgs=JSON.parse("{{allmsgs|escapejs}}");
+		const fullname="{{fullname|escapejs}}";
+		var imagetrack=0;
+		function scrollToBottom(el) { 
+			el.scrollTop = el.scrollHeight;
+		}
+		$(function () {
+  			$('[data-toggle="tooltip"]').tooltip()
+		})
+		$("#navBarUserIcon .user").css("background",backIcon);
+		$("#navBarUserIcon .user").css("color",fontIcon);
+		$("#navBarUserIcon .user").html(fullname[0].toUpperCase());
+		$("#navBarUserIcon .user").css("font-weight","500");
+		$(".tileScreen video").attr("id","tileScreenVideo-"+username);
+		var mainMember=$(".tileScreen");
+		mainMember.attr("id","tileScreen-"+username);
+		$(".main-video-container .user").attr("id","userIcon-"+username);
+		var tabIndicator=0;
+		const isgroup = (index) => {
+			return chats[chats[index].length-1];
+		}
+	</script>
+	<script type="text/javascript" src="/static/js/datalist.js"></script>
+	<script type="text/javascript" src="/static/js/videocall.js"></script>
+	<script type="text/javascript" src="/static/js/callandsharep2p.js"></script>
+	<script type="text/javascript" src="/static/js/visualHandler.js"></script>
+	<script type="text/javascript" src="/static/js/messageHandler.js"></script>
+	<script>
+		function messageEventHandler(e){
+			let index=0;
+			const data=JSON.parse(e.data);
+			if(data.sender===username){
+				index=tabIndicator;
+			}
+			else{
+				if(data.isgroup==0){
+					index=requestMap[data.sender];
+				}
+				else index=requestMap[data.groupname];
+			}
+			if(data.isgroup==1){
+				groupChatHandler(data, index);
+			}
+			else personalChatHandler(data, index);
+		}
+		for(i =0;i<allmsgs.length;i++){
+			let isgroup=chats[i].length-1;
+			isgroup=chats[i][isgroup];
+			for(var j=0;j<allmsgs[i].length;j++){
+				const msgTime=timetoShow(dayFinder(allmsgs[i][j].time));
+				$($(".mainmsgbox")[i]).append(addMessageHandler(allmsgs[i][j].msgtype,allmsgs[i][j].sender,allmsgs[i][j].chat,chats[i][5],msgTime,isgroup));
+				if(allmsgs[i][j].msgtype==2){
+					$($(".imageshared")[imagetrack]).attr('src', allmsgs[i][j].chat);
+					imagetrack++;
+				}
+				if(allmsgs[i][j].msgtype==3 && isgroup == 1 && allmsgs[i][j].sender!=username){
+					let len=$(".date").length-1;
+					let child=$($(".date")[len]).children()[0];
+					child=$(child).children()[0];
+					$(child).append(meetingjoin(chats[i][0]));
+				}
+			}
+			scrollToBottom($(".msgboxcontainer")[i]);
+		}
+	</script>
+	<script type="text/javascript" src="/static/js/websockethandler.js"></script>
+	<script type="text/javascript" src="/static/js/friendrequest.js"></script>
+	<script type="text/javascript" src="/static/js/imageupload.js"></script>
+	<script type="text/javascript" src="/static/js/userInfo.js"></script>
+</body>
+
+</html>

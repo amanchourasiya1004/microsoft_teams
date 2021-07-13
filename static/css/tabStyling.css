@@ -1,0 +1,94 @@
+.hidden-window{
+    width:400px;
+    position:absolute;
+    right:0;
+    top:0;
+    height:calc(100vh - 65px);
+    background:#202124;
+    padding:15px 10px 10px 10px;
+    display:none;
+}
+.hidden-tab{
+    background:white;
+    border-radius:5px;
+    width:calc(100% - 20px);
+    height: calc(100vh - 65px - 25px);
+    position: relative;
+}
+.chats-heading{
+    padding-left:20px;
+    padding-top:20px;
+    display:flex;
+    border-bottom: 2px solid #4b53bc;
+    padding-bottom:7px;
+}
+.chats-heading i{
+    font-size:46px;
+    color:#4b53bc;
+}
+.chats-heading-text{
+    margin-left:19px;
+    font-size:25px;
+    color:black;
+}
+.incallsendmsg{
+    position:absolute;
+    bottom:17px;
+    display:flex;
+    width:100%;
+    height:37px;
+}
+.hold-incallmsgs{
+    width:100%;
+    height:calc(100% - 134px);
+    overflow:auto;
+}
+.incallsendmsg input{
+    border-radius: 4px;
+    outline: none;
+    border: 2px solid #a6a6a6;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+.incallsendmsg input:focus{
+    border: 2px solid blue;
+}
+.incallsend{
+    position: absolute;
+    right:20px;
+    color:#a6a6a6;
+}
+.incallmsgs{
+    width:100%;
+    color:#2b2b2b !important; 
+}
+.sender-data{
+    display:flex;
+    padding:18px 10px 3px 15px;
+    width:100%;
+}
+.incallmsgsent{
+    width:100%;
+    padding:0 15px;
+}
+.incallsender{
+    font-weight: 500;
+    color: #202124;
+    word-wrap:break-word;
+}
+.incallmsgsent p{
+    word-wrap:break-word;
+    font-weight: normal;
+    color:#202124;
+    font-size:18px;
+    line-height:1;
+}
+.incallsendertime{
+    margin-left:10px;
+    font-size:14px;
+    color:#5f6368;
+    word-wrap:break-word;
+}

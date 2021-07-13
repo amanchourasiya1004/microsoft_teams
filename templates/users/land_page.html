@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content="Video Conferencing Website"/>
+    <title>Microsoft Teams</title>
+    <link rel="stylesheet" href="/static/css/universal.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/land_page.css" type="text/css">
+    <link href="/static/media/favicon.png" type="image/png" rel="icon">
+</head>
+<body>
+    <div class="navbar-main">
+        <div class="brand">
+            <div class="brand-image">
+                <img src="/static/media/mslogo.png" alt=""/>
+            </div>
+            <div class="product-name">Teams</div>
+        </div>
+        <div class="btn-navbar">
+            <button class="navbar-btn" onclick="location.href='/signup/';">Sign up for free</button>
+            <button class="navbar-btn" onclick="location.href='/signin/';">Sign In</button>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="left-div">
+            <div class="content-ms">
+                <div class="msteam">Microsoft Teams</div>
+                <div class="descript">Meet, chat, call, and collaborate in just one place.</div>
+                <div class="btn-holder">
+                    <button class="btn-1" onclick="location.href='/signup/';">Sign up for free</button>
+                    <button class="btn-2" onclick="location.href='/signin/';">Sign in</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-div">
+            <img src="/static/media/chat_image.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="about-container">
+        <div class="left-div-about">
+            <div class="content-ms">
+                <div class="heading-about">Microsoft Teams is for everyone</div>
+                <div class="descript-about">Whether it’s chat, calls, or video, anyone can engage at any time, bringing everyone closer.<br/><br/>Your photos and chat history are always there, so it’s easier to work together.
+                    <br/><br/> Set up your team’s space with all the apps you need so you can stay in just one place instead of jumping around.</div>
+            </div>
+        </div>
+        <div class="right-div-about">
+            <div class="first-img-about">
+                <img src="/static/media/about-1.jpg" alt=""/>
+            </div>
+            <div class="about-img-ver">
+                <img src="/static/media/about-2.jpeg" alt=""/>
+                <img src="/static/media/about-3.jpeg" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="feature-main">
+        <img src="/static/media/feature-1.jpg" alt=""/>
+        <div class="feature-about">
+            <div class="feature-name">
+                Chat
+            </div>
+            <div class="feature-exp">
+                Share your opinion and have fun with your team. Send GIFs, stickers, and emojis in a group chat or in one-to-one messages.
+            </div>
+        </div>
+    </div>
+    <div class="feature-main">
+        <img src="/static/media/feature-2.jpg" alt=""/>
+        <div class="feature-about">
+            <div class="feature-name">
+                Meet
+            </div>
+            <div class="feature-exp">
+                Instantly go from group chat to video conference with the touch of a button. Teams of two or 10,000 can meet in one place from anywhere.
+            </div>
+        </div>
+    </div>
+    <div class="feature-main">
+        <img src="/static/media/feature-3.jpg" alt=""/>
+        <div class="feature-about">
+            <div class="feature-name">
+                Call
+            </div>
+            <div class="feature-exp">
+                Make and receive calls directly in Microsoft Teams with advanced features like group calling, cloud voicemail, and call transfers.
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="footer-div">
+            <div class="footer-getting-started">Get started with Microsoft Teams today</div>
+            <div class="btn-holder-footer">
+                <button class="btn-1" onclick="location.href='/signup/';">Sign up for free</button>
+                <button class="btn-2" onclick="location.href='/signin/';">Sign in</button>
+            </div>
+        </div>
+        <div class="footer-note">
+            <div class="brand">
+                <div class="brand-image">
+                    <img src="/static/media/teams.png" alt=""/>
+                </div>
+                <div class="product-footer">MS Teams</div>
+            </div>
+            <div class="ms-copyright">Copyright &#169; 2021 Microsoft Inc.</div>
+            <div class="note-images"><b>Note : </b>All images belong to the Microsoft Community.</div>
+        </div>
+    </div>
+    <script>
+        const me="{{me|escapejs}}";
+        console.log(me);
+    </script>
+</body>
+</html>

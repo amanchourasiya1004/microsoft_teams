@@ -1,0 +1,120 @@
+body{
+    font-family: CircularStd,sans-serif;
+}
+.common-prop{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 10px;
+    font-size:21px;
+    font-weight: 500;
+    color:#4b53bc;
+}
+.labels{
+    margin-bottom:20px !important;
+}
+.input-elem{
+    margin-bottom:30px;
+}
+img{
+    width:200px;
+    height: auto;
+    border-radius:50%;
+    border:3px solid #4b53bc;
+}
+.details{
+    margin:10px 0px;
+    font-size:25px;
+    font-weight: bold;
+    color:#202144;
+}
+.topdiv{
+    padding-top:40px;
+}
+input{
+    border:none;
+    border-bottom: 1px solid #a5a5a5;
+    outline:none !important;
+    width:370px;
+    font-size:18px;
+    padding-left:7px;
+}
+.except{
+    flex-direction: row !important;
+}
+.group-btn{
+    outline: none !important;
+    border: none !important;
+    background: #e8e8e8;
+    font-size:18px;
+    color: rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    border-radius: 5px;
+    font-size:18px;
+    margin-left:20px;
+    cursor: not-allowed;
+}
+.create-btn{
+    position: absolute;
+    bottom:40px;
+    right:40px;
+    font-size:21px;
+    padding: 10px;
+}
+.error-msg{
+    color:red;
+    position:absolute;
+    bottom:40px;
+    font-size: 18px;
+}
+.selected{
+    padding: 5px 10px;
+    border-radius: 27px;
+    display: inline-block;
+    letter-spacing: 1.3px;
+    color: #243b4a;
+    border: 2px solid #0a2342;
+    margin: 0px 7px 8px 0px;
+}
+.selected-name{
+    margin-left: 3px;
+    font-size: 15px;
+}
+.selected i{
+    color: rgba(0, 0, 0 , 0.6);
+    font-size: 13px;
+}
+.delicon{
+    margin-top:1px;
+    width: 19px;
+    height: 19px;
+    background: rgba(49, 32, 32, 0.3) !important;
+    border-radius: 50%;
+    line-height: 17px;
+    cursor: pointer;
+}
+.material-icons{
+    font-family:'Material Icons';
+    font-weight:400;
+    font-style:normal;
+    font-size:24px;
+    display:inline-block;
+    line-height:1;
+    text-transform:none;
+    letter-spacing:normal;
+    word-wrap:normal;
+    white-space:nowrap;
+    direction:ltr;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    -moz-osx-font-smoothing:grayscale;
+    font-feature-settings:'liga';
+}
+.hold-participants{
+    max-width: 70%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}

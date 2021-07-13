@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content="Video Conferencing Website"/>
+    <title>Sign Up | Microsoft Teams</title>
+    <link rel="stylesheet" href="/static/css/universal.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/authentication.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/error.css" type="text/css">
+    <link href="/static/media/favicon.png" type="image/png" rel="icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main-form">
+        <div class="error-msg">{{error}}</div>
+        <div class="teams-text">Microsoft Teams</div>
+        <div class="card-holder" style="width:473px;height:482px">
+            <div class="logo-forms"><img src="/static/media/mslogo.png" alt=""/></div>
+            <div class="email-password-div"></div>
+            <div class="text-signup">Enter an email</div>
+            <div class="text-exp">We'll use this email to set up your Teams Account.</div>
+            <form action="{% url 'signupteams' %}" method="POST" id='signUpForm'>
+                {% csrf_token %}
+                <div class="input-div">
+                    <input type="text" name="username" autoComplete="off" class="form-input" placeholder="Choose a username" onkeyup='keyUpHandler(this)' onfocus='clickHandler(this)' onblur='onBlurHandler(this)' id='username'/>
+                </div>
+                <div class="error-input" id='error-username'></div>
+                <div class="input-div">
+                    <input type="text" name="email" autoComplete="on" class="form-input" placeholder="someone@example.com" onkeyup='keyUpHandler(this)' onfocus='clickHandler(this)' onblur='onBlurHandler(this)' id='email'/>
+                </div>
+                <div class="error-input" id='error-email'></div>
+                <div class="input-div">
+                    <input type="password" name="password" autoComplete="on" class="form-input" placeholder="Create Password" onkeyup='keyUpHandler(this)' onfocus='clickHandler(this)' onblur='onBlurHandler(this)' id='password'/>
+                </div>
+                <div class="error-input" id='error-password'></div>
+                <div class="no-account">
+                    Already a User?
+                    <a href="/signin">Sign in</a>
+                </div>
+                <div class="btn-holder-form">
+                    <button type="submit">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src='/static/js/errorHandling.js'></script>
+</body>
+</html>

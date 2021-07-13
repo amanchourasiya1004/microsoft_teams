@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<meta charset="utf-8">
+		<title>Meeting | Micorosoft Teams</title>
+		<meta name="description" content="#">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<!-- Swipe core CSS -->
+		<link href="/static/css/fontface.css" type="text/css" rel="stylesheet">
+		<link href="/static/css/videocall.css" type="text/css" rel="stylesheet">
+		<link href="/static/css/tabStyling.css" type="text/css" rel="stylesheet">
+		<!-- Favicon -->
+		<link href="/static/media/favicon.png" type="image/png" rel="icon">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="call" id="call1">
+		<div class="videos-container">
+			<div class="main-video-container">
+				<div class="main-video-tile">
+					<div class="user text-center"></div>
+					<div class="tileScreen">
+						<video autoplay playsinline></video>
+					</div>
+				</div>
+			</div>
+			<div class="side-content">
+				<div class="tiles-container">
+					<div class="tiles" onclick="tilesClickHandler(this)">
+						<div class="wrapper-tiles">
+							<div class="user text-center"></div>
+							<div class="tileScreen">
+								<video autoplay playsinline></video>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="buttons-container">
+			<button id="mic-callScreen" data-toggle="tooltip" data-placement="top" title="Mic Off"><i class="material-icons-callScreen md-28">mic</i></button>
+			<button id="videocam-callScreen" data-toggle="tooltip" data-placement="top" title="Video Off"><i class="material-icons-callScreen md-28">videocam</i></button>
+			<button id="present-callScreen" onclick="bottomButtonsListener(this,'Stop Presenting','Present Screen')" data-toggle="tooltip" data-placement="top" title="Present Screen"><i class="material-icons-callScreen md-28">present_to_all</i></button>
+			<button id="cut-call-callScreen" data-toggle="tooltip" data-placement="top" title="Leave Call" onclick="hangupgroup()"><i class="material-icons-callScreen md-28">call_end</i></button>
+			<div class="extra-options" style="position: absolute; right: 10px; display: flex;">
+        		<button id="in-call-chats" onclick="bottomButtonsListener(this,'Hide Chats','Show Chats')" data-toggle="tooltip" data-placement="top" title="Show Chats" data-original-title="Show Chats"><i class="material-icons-callScreen md-28">chat</i></button>
+    		</div>
+		</div>
+	</div>
+	<div class="hidden-window">
+        <div class="hidden-tab">
+            <div class="chats-heading">
+                <div style="margin-top:3px"><i class="material-icons-callScreen md-28">forum</i></div>
+                <div class="chats-heading-text"><span>In-call chats</span></div>
+            </div>
+			<div class="hold-incallmsgs">
+			</div>
+			<div class="incallsendmsg">
+				<input id="incallinputbox" onkeyup="inCallHandlerIcon(this)" type="text" placeholder="Send a message..."/>
+				<button class="btn incallsend send" onclick="sendincallMsgHandler(this,0)"><i class="material-icons-callScreen md-24">send</i></button>
+			</div>
+        </div>
+    </div>
+	<script>
+		var ws_scheme = window.location.protocol == "https:" ? "wss://" : "ws://";
+		const pc_config={
+							'iceServers': [
+      								{'urls': "stun:stun.l.google.com:19302"},
+        							{'urls': "stun:stun1.l.google.com:19302"},
+									{'urls': "stun:stun2.l.google.com:19302"},
+        							{'urls': "stun:stun3.l.google.com:19302"},
+        							{'urls': "stun:stun4.l.google.com:19302"},
+									{'urls': "stun:stun.ekiga.net"}
+							]
+						};
+		const constraints={
+    		'video':true,
+    		'audio':true
+		}
+		var fullname="{{fullname|escapejs}}";
+		const username="{{username|escapejs}}";
+		const members=JSON.parse("{{groupusers|escapejs}}");
+		const usersdata=JSON.parse("{{userdetails|escapejs}}");
+		const groupname="{{groupname|escapejs}}";
+	</script>
+	<script type="text/javascript" src="/static/js/videocall.js"></script>
+	<script type="text/javascript" src="/static/js/callandsharep2p.js"></script>
+	<script type="text/javascript" src="/static/js/group/callandshare.js"></script>
+</body>
+</html>

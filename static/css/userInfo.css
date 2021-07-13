@@ -1,0 +1,56 @@
+.user-info-name{
+    margin-left:19px;
+    font-size:25px;
+    color:black;
+    margin-top:3px;
+}
+.modal-content-info{
+    background:#fff;
+    color:#202144 !important;
+    animation-duration: 0s !important;
+    border:3px solid #4b53bc;
+}
+.user-info-container{
+    width:100%;
+    padding:10px;
+}
+.border-info-div{
+    display:flex;
+    padding:10px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.border-info-div:hover{
+    background:#4b53bc;
+    color:#fff;
+    transition:.2s ease-in;
+}
+.user-info-tag{
+    width:170px;
+    word-wrap: break-word;
+    font-size:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.user-info{
+    width:calc(100% - 40px - 170px);
+    word-wrap: break-word;
+    font-size:20px;
+}
+.user-info-action{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:15px;
+}
+.user-info-action button{
+    margin: 0 auto;
+    font-size:20px;
+    background:#4b53bc;
+}
+#grouppart{
+    max-height:100px;
+    overflow: auto;
+}

@@ -1,0 +1,120 @@
+.email-password-div{
+    width:100%;
+    margin-bottom:11px;
+}
+
+.text-signup{
+    font-family: "Segoe UI Bold";
+    font-size:22px;
+}
+
+.text-exp{
+    margin-top:20px;
+}
+
+.no-account{
+    margin-top:18px;
+}
+
+::placeholder{
+    font-family: "Segoe UI";
+}
+
+.birthdate-track{
+    margin-top:30px;
+    margin-left: 5px;
+}
+.birthdate-track label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    letter-spacing: 0.05rem;
+    font-family: "Segoe UI";
+}
+  
+.birthdate-track input {
+    font: inherit;
+    margin-top:10px;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+    font-family: "Segoe UI";
+}
+
+.btn-holder-form{
+    width:90%;
+    padding:30px;
+    margin-top:40px;
+}
+
+.btn-holder-form button {
+    cursor: pointer;
+    border: 1px solid;
+    border-radius:2px;
+    font-size:18px;
+    padding: 0.4rem 2.5rem;
+    color: #fff;
+    background:#4b53bc;
+    letter-spacing:0.1rem;
+    float:right;
+}
+  
+.btn-holder-form button:hover,
+.btn-holder-form button:active {
+    background: #363c90;
+    text-decoration: underline;
+}
+
+.main-form{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    background:#f2f2f2;
+}
+
+.teams-text{
+    font-size:34px;
+    color:#4b53bc;
+}
+
+.card-holder{
+    background:#fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
+    margin-top:28px;
+    padding:2.7rem 2.5rem;
+}
+
+.logo-forms{
+    float:left;
+    width:100%;
+    margin-bottom:26px;
+}
+
+.logo-forms img{
+    width:8.2rem;
+    height:auto;
+}
+
+.input-div{
+    width:90%;
+    margin-top:35px;
+}
+
+.form-input{
+    width:100%;
+    outline:0;
+    border:0;
+    box-shadow: 0 2px 0 0 #e5e5e5;
+    padding: 7px 10px 7px 10px;
+    font-size:18px;
+    font-family: "Segoe UI";
+}
+
+.focused{
+    box-shadow: 0 2px 0 0 #4b53bc !important;
+}

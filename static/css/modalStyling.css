@@ -1,0 +1,106 @@
+.modal-content{
+    background:#4b53bc;
+    color:#fff !important;
+    border-radius:10px;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+.material-icons.md-30 {
+    font-size: 30px;
+}
+.call-type{
+    display:flex;
+    justify-content:center;
+    width:95%;
+}
+.call-name{
+    font-size:22px;
+    padding-top:7px;
+}
+.caller-info{
+    display:flex;
+    width:100%;
+    justify-content: center;
+    margin:30px 0 20px 0;
+}
+.caller-name{
+    margin-left:16px;
+    font-size:20px;
+    padding-top:4px;
+}
+.call-footer{
+    display: flex;
+    justify-content:center;
+    width:100%;
+    padding:50px 0 20px 0;
+}
+.cut-call{
+    margin-right:60px;
+    background:red;
+    border-radius: 100%;
+    color:#fff;
+    padding-top:10px;
+}
+.accept-call{
+    padding-top:10px;
+    background:green;
+    border-radius: 50%;
+    color:#fff;
+}
+.utility-icon{
+    color:#fff;
+}
+.accept-call{
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: pulse;
+}
+.modal-content {
+    position: relative;
+    border: solid 3px #fff;
+    animation: play 2s ease infinite;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+  
+}
+@keyframes play {
+
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        box-shadow: 0 0 0 5px rgba(75, 83, 188, 0.4);
+    }
+    25% {
+        box-shadow: 0 0 0 10px rgba(75, 83, 188, 0.4), 0 0 0 20px rgba(75, 83, 188, 0.2);
+    }
+    25% {
+        box-shadow: 0 0 0 15px rgba(75, 83, 188, 0.4), 0 0 0 30px rgba(75, 83, 188, 0.2);
+    }
+
+}
+@-webkit-keyframes pulse{0%{-webkit-box-shadow:0 0 0 0 rgba(0,0,0,.1)}100%{-webkit-box-shadow:0 0 0 50px transparent}}@keyframes pulse{0%{-moz-box-shadow:0 0 0 0 rgba(0,0,0,.1);box-shadow:0 0 0 0 rgba(0,0,0,.1)}100%{-moz-box-shadow:0 0 0 50px transparent;box-shadow:0 0 0 50px transparent}}@-webkit-keyframes call-end{0%{-webkit-box-shadow:0 0 0 0 rgba(0,0,0,.1)}100%{-webkit-box-shadow:0 0 0 20px transparent}}@keyframes call-end{0%{-moz-box-shadow:0 0 0 0 rgba(0,0,0,.1);box-shadow:0 0 0 0 rgba(0,0,0,.1)}100%{-moz-box-shadow:0 0 0 20px transparent;box-shadow:0 0 0 20px transparent}}

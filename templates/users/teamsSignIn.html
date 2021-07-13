@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content="Video Conferencing Website"/>
+    <title>Login | Microsoft Teams</title>
+    <link rel="stylesheet" href="/static/css/universal.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/authentication.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/error.css" type="text/css">
+    <link href="/static/media/favicon.png" type="image/png" rel="icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main-form">
+        <div class="error-msg">{{error}}</div>
+        <div class="teams-text">Microsoft Teams</div>
+        <div class="card-holder" style="width:473px;height:435px">
+            <div class="logo-forms"><img src="/static/media/mslogo.png" alt=""/></div>
+            <div class="email-password-div"></div>
+            <div class="text-signup">Enter the email</div>
+            <div class="text-exp">Enter the email associated with your Teams Account.</div>
+            <form action="{% url 'signinteams' %}" method="POST" id="signInForm">
+                {% csrf_token %}
+                <div class="input-div">
+                    <input type="text" name="username" autoComplete="on" class="form-input" placeholder="Enter your username" onkeyup='keyUpHandler(this)' onfocus='clickHandler(this)' onblur='onBlurHandler(this)' id='username'/>
+                </div>
+                <div class="error-input" id='error-username'></div>
+                <div class="input-div">
+                    <input type="password" name="password" autoComplete="on" class="form-input" placeholder="Enter Password" onkeyup='keyUpHandler(this)' onfocus='clickHandler(this)' onblur='onBlurHandler(this)'  id='password'/>
+                </div>
+                <div class="error-input" id='error-password'></div>
+                <div class="no-account">
+                    No Teams Account? 
+                    <a href="/signup">Create One!</a>
+                </div>
+                <div class="btn-holder-form">
+                    <button type="submit">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src='/static/js/errorHandling.js'></script>
+</body>
+</html>
