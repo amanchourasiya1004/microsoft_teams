@@ -64,7 +64,7 @@ All javascript files reside in <b>static/js</b> folder.
 
 <b>visualHandler.js</b> -> This file handles the UI when new messages, images arrive in a group or to a user. It also handles video/audio call invitation response.
 
-<b>websockerhandler.js</b> -> This file handles the websocket connections and sends messages and images to the backend whenever required.
+<b>websockethandler.js</b> -> This file handles the websocket connections and sends messages and images to the backend whenever required.
 
 <b>callandsharep2p.js</b> -> This file handles peer to peer connection using webrtc.
 
