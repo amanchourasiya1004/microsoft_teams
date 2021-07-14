@@ -2,7 +2,8 @@ The web application is deployed at https://snakapp.in
 
 <h3>For demonstrational purposes - </h3>
 Credentials for login - 
-<b>username - amanchourasiya</b>\n
+
+<b>username - amanchourasiya</b>
 
 <b>password - testuser</b>
 
