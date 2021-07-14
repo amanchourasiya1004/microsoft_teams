@@ -1,15 +1,15 @@
 The web application is deployed at https://snakapp.in
 
+<b>Please have a look at the high quality video demonstration of the web application</b> 
+
+https://youtu.be/H0wHoXiF_IM
+
 <h3>For demonstrational purposes - </h3>
 Credentials for login - 
 
 <b>username - amanchourasiya</b>
 
 <b>password - testuser</b>
-
-<b>Please have a look at the high quality video demonstration of the web application</b> 
-
-https://youtu.be/H0wHoXiF_IM
 
 <h3>Operational Features  </h3>
 <ul>
