@@ -1,6 +1,6 @@
 The web application is deployed at https://snakapp.in
 
-<b>Please have a look at the high quality video demonstration of the web application</b> 
+<h3>Please have a look at the high quality video demonstration of the web application</h3> 
 
 https://youtu.be/H0wHoXiF_IM
 
