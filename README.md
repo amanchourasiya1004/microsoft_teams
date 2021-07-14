@@ -1,77 +1,78 @@
 The web application is deployed at https://snakapp.in
 
-High quality video demonstration is available at https://youtu.be/XRy3ClvhP08
+<b>High quality video demonstration</b> is available at https://youtu.be/XRy3ClvhP08
 
-Operational Features - 
+<h3>Operational Features  <h3>
+<ul>
+<li> User Authentication (Sign Up and Sign In)
 
-1. User Authentication (Sign Up and Sign In)
+<li> Search for any Registered User (using his/her username)
 
-2. Search for any Registered User (using his/her username)
+<li> Chat and share images with any user
 
-3. Chat and share images with any user
+<li> Send invitation to other users for a voice or video call
 
-4. Send invitation to other users for a voice or video call
+<li> Make Voice and Video calls with any user
 
-5. Make Voice and Video calls with any user
+<li> Video/Audio mute/unmute option
 
-6. Video/Audio mute/unmute option
+<li> Present Screen while in call
 
-7. Present Screen while in call
+<li> Have one-to-one chat while in call (chats are saved as well)
 
-8. Have one-to-one chat while in call (chats are saved as well)
+<li> View any user’s Information
 
-9. View any user’s Information
+<li> Create a group consisting of users in the platform
 
-10. Create a group consisting of users in the platform
+<li> Chat and share images in the Group
 
-11. Chat and share images in the Group
+<li> With each image and message, a tag is attached highlighting the sender
 
-12. With each image and message, a tag is attached highlighting the sender
+<li> Invite group members for a Video call
 
-13. Invite group members for a Video call
+<li> Make Video calls in a group where anyone in the group can join.
 
-14. Make Video calls in a group where anyone in the group can join.
+<li> Share Screen while being in a group video call
 
-15. Share Screen while being in a group video call
+<li> Video/Audio mute/unmute option in a group video call
 
-16. Video/Audio mute/unmute option in a group video call
+<li> Chat with the group members while being in call (chats are saved as well)
 
-17. Chat with the group members while being in call (chats are saved as well)
-
-18. Logout from the web application
+<li> Logout from the web application
+</ul>
 
 Directory Structure and explanation -------------------------------------------------------------
 
-chat -> A django app that handles chatting and sharing images feature
+<b>chat</b> -> A django app that handles chatting and sharing images feature
 
-usergroups -> A django app that handles Group creation and Group image sharing and group meetings.
+<b>usergroups</b> -> A django app that handles Group creation and Group image sharing and group meetings.
 
-users -> A django app that handles User Authentication
+<b>users</b> -> A django app that handles User Authentication
 
-videocall -> A django that handles Video call between two peers and in a group.
+<b>videocall</b> -> A django that handles Video call between two peers and in a group.
 
-teams -> Django Configuration folder
+<b>teams</b> -> Django Configuration folder
 
-templates -> Has all the HTML files.
+<b>templates</b> -> Has all the HTML files.
 
-static -> Has all the static files like css, js and other media content.
+<b>static</b> -> Has all the static files like css, js and other media content.
 
-Few javascript files explanation ---------------------------------------------------------------
+<h3>Few javascript files explanation</h3>
 
-All javascript files reside in static/js folder.
+All javascript files reside in <b>static/js</b> folder.
 
 
-visualHandler.js -> This file handles the UI when new messages, images arrive in a group or to a user. It also handles video/audio call invitation response.
+<b>visualHandler.js</b> -> This file handles the UI when new messages, images arrive in a group or to a user. It also handles video/audio call invitation response.
 
-websockerhandler.js -> This file handles the websocket connections and sends messages and images to the backend whenever required.
+<b>websockerhandler.js</b> -> This file handles the websocket connections and sends messages and images to the backend whenever required.
 
-callandsharep2p.js -> This file handles peer to peer connection using webrtc.
+<b>callandsharep2p.js</b> -> This file handles peer to peer connection using webrtc.
 
-friendrequest.js -> This file handles the event when a user contacts another user for the first time.
+<b>friendrequest.js</b> -> This file handles the event when a user contacts another user for the first time.
 
-imageupload.js -> This file handles the event of sharing images using AJAX.
+<b>imageupload.js</b> -> This file handles the event of sharing images using AJAX.
 
-messageHandler.js -> This file handles the event when new messages and images arrive in a group or
+<b>messageHandler.js</b> -> This file handles the event when new messages and images arrive in a group or
 to a user.
 
-videocall.js -> This file handles the UI for clicking video/audio mute/unmute, screen sharing etc.
+<b>videocall.js</b> -> This file handles the UI for clicking video/audio mute/unmute, screen sharing etc.
