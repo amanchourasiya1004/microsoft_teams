@@ -7,7 +7,9 @@ Credentials for login -
 
 <b>password - testuser</b>
 
-<b>High quality video demonstration</b> is available at https://youtu.be/XRy3ClvhP08
+<b>Please have a look at the high quality video demonstration of the web application</b> 
+
+https://youtu.be/H0wHoXiF_IM
 
 <h3>Operational Features  </h3>
 <ul>
