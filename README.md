@@ -39,3 +39,39 @@ Operational Features -
 17. Chat with the group members while being in call (chats are saved as well)
 
 18. Logout from the web application
+
+Directory Structure and explanation
+
+chat -> A django app that handles chatting and sharing images feature
+
+usergroups -> A django app that handles Group creation and Group image sharing and group meetings.
+
+users -> A django app that handles User Authentication
+
+videocall -> A django that handles Video call between two peers and in a group.
+
+teams -> Django Configuration folder
+
+templates -> Has all the HTML files.
+
+static -> Has all the static files like css, js and other media content.
+
+Few javascript files explanation ----------------
+
+All javascript files reside in static/js folder.
+
+
+visualHandler.js -> This file handles the UI when new messages, images arrive in a group or to a user. It also handles video/audio call invitation response.
+
+websockerhandler.js -> This file handles the websocket connections and sends messages and images to the backend whenever required.
+
+callandsharep2p.js -> This file handles peer to peer connection using webrtc.
+
+friendrequest.js -> This file handles the event when a user contacts another user for the first time.
+
+imageupload.js -> This file handles the event of sharing images using AJAX.
+
+messageHandler.js -> This file handles the event when new messages and images arrive in a group or
+to a user.
+
+videocall.js -> This file handles the UI for clicking video/audio mute/unmute, screen sharing etc.
