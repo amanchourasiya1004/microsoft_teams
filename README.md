@@ -41,7 +41,7 @@ The web application is deployed at https://snakapp.in
 <li> Logout from the web application</li>
 </ul>
 
-Directory Structure and explanation -------------------------------------------------------------
+<h3>Directory Structure and explanation </h3>
 
 <b>chat</b> -> A django app that handles chatting and sharing images feature
 
