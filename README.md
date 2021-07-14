@@ -4,41 +4,41 @@ The web application is deployed at https://snakapp.in
 
 <h3>Operational Features  <h3>
 <ul>
-<li> User Authentication (Sign Up and Sign In)
+<li> User Authentication (Sign Up and Sign In)</li>
 
-<li> Search for any Registered User (using his/her username)
+<li> Search for any Registered User (using his/her username)</li>
 
-<li> Chat and share images with any user
+<li> Chat and share images with any user</li>
 
-<li> Send invitation to other users for a voice or video call
+<li> Send invitation to other users for a voice or video call</li>
 
-<li> Make Voice and Video calls with any user
+<li> Make Voice and Video calls with any user</li>
 
-<li> Video/Audio mute/unmute option
+<li> Video/Audio mute/unmute option</li>
 
-<li> Present Screen while in call
+<li> Present Screen while in call</li>
 
-<li> Have one-to-one chat while in call (chats are saved as well)
+<li> Have one-to-one chat while in call (chats are saved as well)</li>
 
-<li> View any user’s Information
+<li> View any user’s Information</li>
 
-<li> Create a group consisting of users in the platform
+<li> Create a group consisting of users in the platform</li>
 
-<li> Chat and share images in the Group
+<li> Chat and share images in the Group</li>
 
-<li> With each image and message, a tag is attached highlighting the sender
+<li> With each image and message, a tag is attached highlighting the sender</li>
 
-<li> Invite group members for a Video call
+<li> Invite group members for a Video call</li>
 
-<li> Make Video calls in a group where anyone in the group can join.
+<li> Make Video calls in a group where anyone in the group can join.</li>
 
-<li> Share Screen while being in a group video call
+<li> Share Screen while being in a group video call</li>
 
-<li> Video/Audio mute/unmute option in a group video call
+<li> Video/Audio mute/unmute option in a group video call</li>
 
-<li> Chat with the group members while being in call (chats are saved as well)
+<li> Chat with the group members while being in call (chats are saved as well)</li>
 
-<li> Logout from the web application
+<li> Logout from the web application</li>
 </ul>
 
 Directory Structure and explanation -------------------------------------------------------------
