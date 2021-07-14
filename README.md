@@ -2,7 +2,7 @@ The web application is deployed at https://snakapp.in
 
 <b>High quality video demonstration</b> is available at https://youtu.be/XRy3ClvhP08
 
-<h3>Operational Features  <h3>
+<h3>Operational Features  </h3>
 <ul>
 <li> User Authentication (Sign Up and Sign In)</li>
 
