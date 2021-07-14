@@ -40,7 +40,7 @@ Operational Features -
 
 18. Logout from the web application
 
-Directory Structure and explanation
+Directory Structure and explanation -------------------------------------------------------------
 
 chat -> A django app that handles chatting and sharing images feature
 
@@ -56,7 +56,7 @@ templates -> Has all the HTML files.
 
 static -> Has all the static files like css, js and other media content.
 
-Few javascript files explanation ----------------
+Few javascript files explanation ---------------------------------------------------------------
 
 All javascript files reside in static/js folder.
 
